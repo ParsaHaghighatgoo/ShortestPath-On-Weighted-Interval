@@ -221,14 +221,12 @@ public class Main {
                 union(find(sortedIntervals.get(i).successor), sortedIntervals.get(i));
             }}
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
             for (Interval interval : sortedIntervals) {
                 if (interval.pathSize == -1 && find(interval).masterParent != null) {
                     interval.pathSize = interval.weight + find(interval).masterParent.pathSize;
                 }
             }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             int counterPrint = 1;
             for (Interval interval : sortedIntervals) {
                 System.out.println(counterPrint + " " + interval.pathSize);

@@ -123,7 +123,7 @@ public class Main {
 
     //Set Successor Function
     public static void setSuccessors(List<Interval> sortedIntervals) {
-        Interval lastSeen = Pairs.getLast().interval;
+        Interval lastSeen = Pairs.get(Pairs.size()-1).interval;
         for (int i = Pairs.size() - 1; i >= 0; i--) {
             if (!Pairs.get(i).isStart) {
                 lastSeen = Pairs.get(i).interval;
